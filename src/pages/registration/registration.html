@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create your account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <form [formGroup]="registrationForm" autocomplete="off" novalidate>
+      <ion-item>
+        <ion-label floating color="primary">First name</ion-label>
+        <ion-input formControlName="first_name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="primary">Last name</ion-label>
+        <ion-input formControlName="last_name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="primary">Email</ion-label>
+        <ion-input formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="primary">Password</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button ion-button (click)="onRegister(registrationForm)" type="submit" color="primary" block>Create account</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+</ion-content>

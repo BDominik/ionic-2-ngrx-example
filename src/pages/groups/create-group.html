@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Create a new group</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <form [formGroup]="groupCreationForm" autocomplete="off" novalidate>
+            <ion-item>
+                <ion-label floating color="primary">Name</ion-label>
+                <ion-input formControlName="name" required></ion-input>
+            </ion-item>
+            <ion-row responsive-sm>
+                <ion-col>
+                    <button ion-button (click)="onGroupCreation(groupCreationForm)" type="submit" color="primary" block>Create</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-list>
+</ion-content>

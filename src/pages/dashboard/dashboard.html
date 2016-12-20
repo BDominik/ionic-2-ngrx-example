@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="ios-settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-row responsive-sm>
+    <ion-col>
+      <button ion-button (click)="goToGroupCreationPage()" type="submit" color="primary" block>Create a new group</button>
+    </ion-col>
+  </ion-row>
+
+  <h3 padding>Invitations</h3>
+
+  <ion-list>
+    <ion-item *ngFor="let invitation of groupInvitations$ | async">
+      <h2>{{ invitation.group.name }} ({{ invitation.inviter.first_name }} {{ invitation.inviter.last_name }})</h2>
+      <button ion-button item-right (click)="acceptGroupInvitation($event, invitation)">Accept</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

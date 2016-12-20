@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ group.name }} Invitations</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let user of users$ | async">
+      <ion-thumbnail item-left>
+        <img src="assets/img/thumbnail-terminator.png">
+      </ion-thumbnail>
+      <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      <button ion-button item-right (click)="invite($event, user.id)">Invite</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button (click)="cancel()" color="light" small>
+      Cancel
+    </button>
+    <ion-title>Schedule a {{ group.name }} event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <form [formGroup]="eventCreationForm" autocomplete="off" novalidate>
+            <ion-item>
+                <ion-label floating color="primary">Name</ion-label>
+                <ion-input formControlName="name" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating color="primary">Start at</ion-label>
+                <ion-input formControlName="start_at" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating color="primary">End at</ion-label>
+                <ion-input formControlName="end_at" required></ion-input>
+            </ion-item>
+            <ion-row responsive-sm>
+                <ion-col>
+                    <button ion-button (click)="onEventCreation(eventCreationForm)" type="submit" color="primary" block>Schedule Event</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-list>
+</ion-content>
