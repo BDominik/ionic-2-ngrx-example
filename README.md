@@ -32,3 +32,10 @@ npm install
 ```bash
 ionic serve
 ```
+
+## TODO
+  * [Validation]
+  * [Roles]
+  * [Messages - Push notifications/Websocket]
+  * [Moment.js]
+  * [Immutable.js]
